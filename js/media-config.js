@@ -630,7 +630,7 @@ const PROJECTS = [
     year: "2022",
     role: "Apparel Design",
     description: "Apparel design and campaign visual direction for Odlyworkshop 22SS — a casual mood built around a playful mix of varied prints and curved forms.",
-    hero:  { type: "image", src: "assets/22SS/3.jpg", alt: "",},
+    hero:  { type: "image", src: "assets/22SS/3.jpg", alt: "", ratio: "4-3",},
     thumb: { type: "image", src: "assets/22SS/3.jpg", alt: "",},    
     credits: [
       { key: "Apparel Design & Visual Direction", value: "Jiun Lee" },
