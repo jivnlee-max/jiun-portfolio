@@ -503,7 +503,7 @@ const PROJECTS = [
     year: "2024",
     role: "Film",
     description: "Film, styling, and sound production for AMOMENTO 24SS Seasonal Film. Directed to highlight the season's key sheer fabrications and capture a distinct sense of seasonality.",
-    hero:  { type: "video", src: "assets/24SS Seasonal Film/1.mp4", alt: "",},
+    hero:  { type: "video", src: "assets/24SS Seasonal Film/1.mp4", alt: "", ratio: "3-4",},
     thumb: { type: "video", src: "assets/24SS Seasonal Film/1.mp4", alt: "",},    
     credits: [
       { key: "Film & Styling", value: "Jiun Lee" }
