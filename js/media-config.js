@@ -629,7 +629,7 @@ const PROJECTS = [
     category: "Campaign",
     year: "2022",
     role: "Apparel Design",
-    ddescription: "Apparel design and campaign visual direction for Odlyworkshop 22SS — a casual mood built around a playful mix of varied prints and curved forms.",
+    description: "Apparel design and campaign visual direction for Odlyworkshop 22SS — a casual mood built around a playful mix of varied prints and curved forms.",
     hero:  { type: "image", src: "assets/22SS/3.jpg", alt: "",},
     thumb: { type: "image", src: "assets/22SS/3.jpg", alt: "",},    
     credits: [
