@@ -189,6 +189,14 @@
     @media (max-width: 480px) {
       .grid { grid-template-columns: 1fr; }
     }
+
+    /* 터치 디바이스 — hover 효과 비활성화 */
+    @media (hover: none) {
+      .grid-item:hover .grid-thumb img,
+      .grid-item:hover .grid-thumb video { transform: none; }
+      .grid-item:hover .grid-overlay { opacity: 0; }
+      .grid-arrow { display: none; }
+    }
   </style>
 </head>
 <body>

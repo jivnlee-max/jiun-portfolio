@@ -154,6 +154,13 @@
     @media (max-width: 768px) {
       .full-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* 터치 디바이스 — hover 효과 비활성화 */
+    @media (hover: none) {
+      .grid-item:hover .grid-thumb img,
+      .grid-item:hover .grid-thumb video { transform: none; }
+      .grid-arrow-corner { display: none; }
+    }
     @media (max-width: 480px) {
       .full-grid { grid-template-columns: 1fr; }
     }
