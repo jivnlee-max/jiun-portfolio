@@ -525,7 +525,7 @@ const PROJECTS = [
     thumb: { type: "video", src: "assets/Amomento Hannam Store/0.mp4", alt: "",},    
     credits: [
       { key: "Visual Direction & Sound", value: "Jiun Lee" },
-      { key: "3D grapchic Design", value: "Sungwoo Hong" }
+      { key: "3D graphic Design", value: "Sungwoo Hong" }
     ],
     gallery: [
       { layout: "3col", items: [
@@ -575,7 +575,7 @@ const PROJECTS = [
     credits: [
       { key: "Apparel Design & Visual Direction", value: "Jiun Lee" },
       { key: "Photography", value: "Jimin Son" },
-      { key: "Styling", value: "Jaechang Yu" },
+      { key: "Styling", value: "Byungun Park" },
       { key: "Hair & Makeup ", value: "Taeyoung Kim" },
     ],
     gallery: [
