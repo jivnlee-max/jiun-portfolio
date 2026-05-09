@@ -107,6 +107,11 @@
       .contact-section { grid-template-columns: 1fr; }
       .contact-left { border-right: none; border-bottom: 0.5px solid var(--border); }
     }
+
+    /* 터치 디바이스 — hover 효과 비활성화 */
+    @media (hover: none) {
+      .contact-link-row:hover { background: var(--bg); }
+    }
   </style>
 </head>
 <body>
