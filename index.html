@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jiun Lee — Visual Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── HERO ── */
+    .hero {
+      width: 100%;
+      position: relative;
+      background: var(--bg-card);
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .hero-media-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* hero ratio 변형 */
+    .hero-media-wrap.ratio-3-4  { aspect-ratio: 3/4; }
+    .hero-media-wrap.ratio-4-5  { aspect-ratio: 4/5; }
+    .hero-media-wrap.ratio-9-16 { aspect-ratio: 9/16; max-width: 560px; margin: 0 auto; }
+    .hero-media-wrap.ratio-4-3  { aspect-ratio: 4/3; }
+    .hero-media-wrap.ratio-1-1  { aspect-ratio: 1/1; }
+    .hero-media-wrap.ratio-sq    { aspect-ratio: 1/1; }
+
+    .hero-media-wrap img,
+    .hero-media-wrap video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-media-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .hero-media-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      background: var(--bg-card);
+    }
+    .hero-media-placeholder.ratio-3-4  { aspect-ratio: 3/4; }
+    .hero-media-placeholder.ratio-4-5  { aspect-ratio: 4/5; }
+    .hero-media-placeholder.ratio-9-16 { aspect-ratio: 9/16; max-width: 560px; margin: 0 auto; }
+    .hero-media-placeholder.ratio-4-3  { aspect-ratio: 4/3; }
+    .hero-media-placeholder.ratio-1-1  { aspect-ratio: 1/1; }
+    .hero-media-placeholder.ratio-sq    { aspect-ratio: 1/1; }
+
+    .hero-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px var(--pad);
+      border-top: 0.5px solid var(--border);
+    }
+
+    .hero-bar-left {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── GRID ── */
+    .work-section { padding: 0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--gap);
+      background: var(--border);
+    }
+
+    .grid-item {
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+      cursor: pointer;
+      display: block;
+    }
+
+    /* 모든 셀 4:3 고정 */
+    .grid-thumb {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--bg-card);
+    }
+
+    .grid-thumb img,
+    .grid-thumb video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .grid-item:hover .grid-thumb img,
+    .grid-item:hover .grid-thumb video { transform: scale(1.04); }
+
+    .thumb-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--border);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--bg-card);
+    }
+
+    .grid-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(26,25,22,0.52) 0%, transparent 55%);
+      opacity: 0;
+      transition: opacity 0.32s ease;
+    }
+
+    .grid-item:hover .grid-overlay { opacity: 1; }
+
+    .grid-cat {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 3px;
+    }
+
+    .grid-title {
+      font-size: 15px;
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.25;
+    }
+
+    .grid-year {
+      font-size: 10px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 3px;
+    }
+
+    .grid-arrow {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 28px;
+      height: 28px;
+      border: 0.5px solid rgba(255,255,255,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.32s ease;
+      color: #fff;
+      font-size: 12px;
+    }
+
+    .grid-item:hover .grid-arrow { opacity: 1; }
+
+    @media (max-width: 768px) {
+      .hero-media-wrap { aspect-ratio: 4/3; }
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Jiun Lee</a>
+    <ul class="nav-links">
+      <li><a href="projects.html">Work</a></li>
+      <li><a href="info.html">Info</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div id="hero-container">
+        <div class="hero-media-placeholder">
+          <span class="label">Hero media — HERO_MEDIA in media-config.js</span>
+        </div>
+      </div>
+      <div class="hero-bar">
+        <span class="hero-bar-left">Visual Designer — Seoul</span>
+        <a href="projects.html" class="btn">View work</a>
+      </div>
+    </section>
+
+    <!-- WORK GRID -->
+    <section class="work-section">
+      <div class="section-header">
+        <span class="label">Selected work</span>
+        <span class="label" id="project-count"></span>
+      </div>
+      <div class="grid" id="home-grid"></div>
+    </section>
+
+    <footer>
+      <span class="label">© 2026 Jiun Lee</span>
+      <ul class="footer-links">
+        <li><a href="https://instagram.com/jivn.lee" target="_blank">Instagram</a></li>
+      </ul>
+    </footer>
+
+  </main>
+
+  <script src="js/media-config.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Hero
+    (function(){
+      var c = document.getElementById('hero-container');
+      if (!c || typeof HERO_MEDIA === 'undefined') return;
+      var m = HERO_MEDIA;
+      var ratioClass = m.ratio ? ' ratio-' + m.ratio.replace('/', '-') : '';
+
+      if (!m.src || m.type === 'none') {
+        var ph = c.querySelector('.hero-media-placeholder');
+        if (ph && ratioClass) ph.className += ratioClass;
+        return;
+      }
+      if (m.type === 'image') {
+        c.innerHTML = '<div class="hero-media-wrap'+ratioClass+'"><img src="'+m.src+'" alt="'+(m.alt||'')+'" /></div>';
+      } else if (m.type === 'video') {
+        c.innerHTML = '<div class="hero-media-wrap'+ratioClass+'"><video autoplay muted loop playsinline src="'+m.src+'"></video></div>';
+      } else if (m.type === 'youtube') {
+        var vid = m.src.match(/(?:v=|youtu\.be\/)([^?&]+)/);
+        if (vid) c.innerHTML = '<div class="hero-media-wrap'+ratioClass+'"><iframe src="https://www.youtube.com/embed/'+vid[1]+'?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&playlist='+vid[1]+'" allowfullscreen></iframe></div>';
+      }
+    })();
+
+    // Home grid — HOME_GRID 배열 순서대로 3열 고정
+    (function(){
+      var grid = document.getElementById('home-grid');
+      if (!grid || typeof HOME_GRID === 'undefined' || typeof PROJECTS === 'undefined') return;
+      document.getElementById('project-count').textContent = PROJECTS.length + ' projects';
+      HOME_GRID.forEach(function(item) {
+        var p = PROJECTS[item.id];
+        if (!p) return;
+        var el = document.createElement('a');
+        el.href = 'project-detail.html?id=' + item.id;
+        el.className = 'grid-item';
+        el.innerHTML =
+          buildThumb(p) +
+          '<div class="grid-overlay">' +
+            '<span class="grid-cat">' + p.category + '</span>' +
+            '<span class="grid-title">' + p.title + '</span>' +
+            '<span class="grid-year">' + (p.year||'') + '</span>' +
+          '</div>' +
+          '<div class="grid-arrow">↗</div>';
+        grid.appendChild(el);
+      });
+    })();
+  </script>
+</body>
+</html>

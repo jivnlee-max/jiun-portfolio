@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project — Jiun Lee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── PROJECT HEADER ── */
+    .project-header {
+      padding: 52px var(--pad) 44px;
+      border-bottom: 0.5px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: end;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+      transition: color var(--transition);
+    }
+    .back-link:hover { color: var(--fg); }
+
+    .project-title {
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+
+    .project-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 0.5px solid var(--border);
+      min-width: 300px;
+    }
+
+    .meta-cell { background: var(--bg); padding: 14px 18px; }
+    .meta-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+    .meta-value { font-size: 13px; color: var(--fg); }
+
+    /* ── HERO MEDIA ── */
+    .project-hero-media {
+      width: 100%;
+      background: var(--bg-card);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* 기본 16:9 */
+    .project-hero-media { aspect-ratio: 16/9; }
+
+    /* ratio 변형 */
+    .project-hero-media.ratio-9-16 {
+      aspect-ratio: 9/16;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .project-hero-media.ratio-3-4 {
+      aspect-ratio: 3/4;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .project-hero-media.ratio-4-5 {
+      aspect-ratio: 4/5;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .project-hero-media.ratio-4-3  { aspect-ratio: 4/3; }
+    .project-hero-media.ratio-16-9 { aspect-ratio: 16/9; }
+
+    .project-hero-media img,
+    .project-hero-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-hero-media iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      position: absolute;
+      inset: 0;
+    }
+
+    .media-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+    }
+
+    /* ── DESCRIPTION ── */
+    .project-desc-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .desc-left {
+      padding: 48px var(--pad);
+      border-right: 0.5px solid var(--border);
+    }
+
+    .desc-right { padding: 48px var(--pad); }
+
+    .project-desc {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--muted);
+      max-width: 480px;
+    }
+
+    .credit-row {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+      border-bottom: 0.5px solid var(--border);
+      font-size: 12px;
+    }
+    .credit-row:last-child { border-bottom: none; margin-bottom: 0; }
+    .credit-key { color: var(--muted); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .credit-val { color: var(--fg); }
+
+    /* ── GALLERY ── */
+    .gallery-header {
+      padding: 20px var(--pad);
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .gallery { display: grid; gap: var(--gap); background: var(--border); }
+    .gallery-2col { grid-template-columns: 1fr 1fr; }
+    .gallery-3col { grid-template-columns: repeat(3, 1fr); }
+    .gallery-full { grid-template-columns: 1fr; }
+
+    .gallery-cell { background: var(--bg-card); overflow: hidden; }
+    .gallery-cell img,
+    .gallery-cell video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ratio classes */
+    .gallery-cell.ratio-sq   { aspect-ratio: 1; }
+    .gallery-cell.ratio-4-3  { aspect-ratio: 4/3; }
+    .gallery-cell.ratio-3-4  { aspect-ratio: 3/4; }
+    .gallery-cell.ratio-4-5  { aspect-ratio: 4/5; }
+    .gallery-cell.ratio-2-3  { aspect-ratio: 2/3; }
+    .gallery-cell.ratio-9-16 { aspect-ratio: 9/16; }
+    .gallery-cell.ratio-16-9 { aspect-ratio: 16/9; }
+    .gallery-cell.ratio-16-9-full { aspect-ratio: 16/9; }
+
+    .yt-embed { position: relative; width: 100%; aspect-ratio: 16/9; }
+    .yt-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+
+    /* ── NEXT PROJECT ── */
+    .next-project {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 32px var(--pad);
+      border-top: 0.5px solid var(--border);
+      text-decoration: none;
+      transition: background var(--transition);
+    }
+    .next-project:hover { background: var(--bg-card); }
+    .next-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .next-title { font-size: 22px; font-weight: 400; margin-top: 5px; }
+    .next-arrow { font-size: 24px; color: var(--muted); }
+
+    @media (max-width: 768px) {
+      .project-header { grid-template-columns: 1fr; }
+      .project-meta-grid { grid-template-columns: 1fr 1fr; }
+      .project-desc-row { grid-template-columns: 1fr; }
+      .desc-left { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .gallery-2col, .gallery-3col { grid-template-columns: 1fr; }
+      .project-hero-media.ratio-9-16,
+      .project-hero-media.ratio-3-4,
+      .project-hero-media.ratio-4-5 { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Jiun Lee</a>
+    <ul class="nav-links">
+      <li><a href="projects.html" class="active">Work</a></li>
+      <li><a href="info.html">Info</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+
+    <header class="project-header reveal">
+      <div>
+        <a href="projects.html" class="back-link">← All work</a>
+        <h1 class="project-title" id="detail-title">Project Title</h1>
+      </div>
+      <div class="project-meta-grid">
+        <div class="meta-cell">
+          <div class="meta-label">Category</div>
+          <div class="meta-value" id="detail-cat">—</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Year</div>
+          <div class="meta-value" id="detail-year">—</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Role</div>
+          <div class="meta-value" id="detail-role">—</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="project-hero-media" id="detail-hero">
+      <div class="media-placeholder"><span class="label">Loading…</span></div>
+    </div>
+
+    <div class="project-desc-row reveal">
+      <div class="desc-left">
+        <p class="label" style="margin-bottom:18px;">About</p>
+        <p class="project-desc" id="detail-desc"></p>
+      </div>
+      <div class="desc-right">
+        <p class="label" style="margin-bottom:18px;">Credits</p>
+        <div id="detail-credits"></div>
+      </div>
+    </div>
+
+    <div class="gallery-header">
+      <span class="label">Images & Film</span>
+    </div>
+    <div id="detail-gallery"></div>
+
+    <a class="next-project reveal" href="#" id="next-link">
+      <div>
+        <p class="next-label">Next project</p>
+        <p class="next-title" id="next-title">—</p>
+      </div>
+      <span class="next-arrow">→</span>
+    </a>
+
+    <footer>
+      <span class="label">© 2026 Jiun Lee</span>
+      <ul class="footer-links">
+        <li><a href="https://instagram.com/jivn.lee" target="_blank">Instagram</a></li>
+      </ul>
+    </footer>
+
+  </main>
+
+  <script src="js/media-config.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    var params = new URLSearchParams(window.location.search);
+    var id = parseInt(params.get('id')) || 0;
+    var p = PROJECTS[id];
+
+    if (!p) {
+      document.getElementById('detail-title').textContent = 'Project not found';
+    } else {
+      document.title = p.title + ' — Jiun Lee';
+      document.getElementById('detail-title').textContent = p.title;
+      document.getElementById('detail-cat').textContent   = p.category;
+      document.getElementById('detail-year').textContent  = p.year || '—';
+      document.getElementById('detail-role').textContent  = p.role || '—';
+      document.getElementById('detail-desc').textContent  = p.description || '';
+
+      // Hero
+      var hero = document.getElementById('detail-hero');
+      var ratio = (p.hero && p.hero.ratio) ? p.hero.ratio : '16-9';
+      hero.classList.add('ratio-' + ratio.replace('/', '-'));
+      hero.innerHTML = buildHeroMedia(p);
+
+      // Credits
+      var creditsEl = document.getElementById('detail-credits');
+      if (p.credits) {
+        p.credits.forEach(function(c) {
+          creditsEl.innerHTML +=
+            '<div class="credit-row">' +
+              '<span class="credit-key">' + c.key + '</span>' +
+              '<span class="credit-val">' + c.value + '</span>' +
+            '</div>';
+        });
+      }
+
+      // Gallery
+      var galleryEl = document.getElementById('detail-gallery');
+      if (p.gallery && p.gallery.length > 0) {
+        galleryEl.innerHTML = buildGallery(p.gallery);
+      }
+
+      // Next
+      var next = PROJECTS[(id + 1) % PROJECTS.length];
+      document.getElementById('next-title').textContent = next.title;
+      document.getElementById('next-link').href = 'project-detail.html?id=' + ((id + 1) % PROJECTS.length);
+    }
+
+    initReveal();
+  </script>
+</body>
+</html>

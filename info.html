@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Info — Jiun Lee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── ABOUT — 풀와이드, border 없이 자연스럽게 ── */
+    .about-section {
+      padding: 72px var(--pad) 72px;
+      max-width: 800px;
+    }
+
+    .about-bio {
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 36px;
+    }
+
+    .tag {
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border: 0.5px solid var(--border);
+      color: var(--muted);
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 0.5px solid var(--border);
+    }
+
+    .contact-left {
+      padding: 56px var(--pad);
+      border-right: 0.5px solid var(--border);
+    }
+
+    .contact-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 320px;
+      margin-bottom: 36px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border);
+      border: 0.5px solid var(--border);
+    }
+
+    .contact-link-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 18px;
+      background: var(--bg);
+      text-decoration: none;
+      transition: background var(--transition);
+    }
+    .contact-link-row:hover { background: var(--bg-card); }
+    .contact-link-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .contact-link-val { font-size: 13px; color: var(--fg); }
+    .contact-link-arrow { font-size: 12px; color: var(--muted); }
+
+    .contact-right { padding: 56px var(--pad); }
+
+    .contact-form { display: flex; flex-direction: column; gap: 18px; }
+    .form-group { display: flex; flex-direction: column; gap: 7px; }
+    .form-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+    .form-input,
+    .form-textarea {
+      background: var(--bg-card);
+      border: 0.5px solid var(--border);
+      padding: 11px 14px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--fg);
+      outline: none;
+      border-radius: 0;
+      transition: border-color var(--transition);
+      width: 100%;
+    }
+    .form-input:focus,
+    .form-textarea:focus { border-color: var(--fg); }
+    .form-textarea { resize: vertical; min-height: 120px; }
+
+    @media (max-width: 768px) {
+      .contact-section { grid-template-columns: 1fr; }
+      .contact-left { border-right: none; border-bottom: 0.5px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Jiun Lee</a>
+    <ul class="nav-links">
+      <li><a href="projects.html">Work</a></li>
+      <li><a href="info.html" class="active">Info</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+
+    <!-- ABOUT — border 없이 자연스럽게 연결 -->
+    <section class="about-section reveal">
+      <span class="label" style="display:block;margin-bottom:28px;">About</span>
+      <p class="about-bio">
+        Visual designer based in Seoul, working across fashion editorial, campaign direction, film, and photography. Interested in the boundary where image-making meets material and tactile craft.
+      </p>
+      <p class="about-bio">
+        Continuously working with fashion brands across visual content production, styling, and campaign direction.
+      </p>
+      <div class="about-tags">
+        <span class="tag">Visual Direction</span>
+        <span class="tag">Editorial</span>
+        <span class="tag">Fashion Film</span>
+        <span class="tag">Photography</span>
+        <span class="tag">Campaign</span>
+        <span class="tag">AI Content</span>
+      </div>
+    </section>
+
+    <!-- CONTACT — border-top으로 자연스럽게 구분 -->
+    <section class="contact-section" id="contact">
+      <div class="contact-left reveal">
+        <span class="label" style="display:block;margin-bottom:24px;">Contact</span>
+        <p class="contact-desc">Open to creative direction, campaign work, and experimental visual production.</p>
+        <div class="contact-links">
+          <a class="contact-link-row" href="mailto:jivn.lee@gmail.com">
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-val">jivn.lee@gmail.com</span>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+          <a class="contact-link-row" href="https://instagram.com/jivn.lee" target="_blank">
+            <span class="contact-link-label">Instagram</span>
+            <span class="contact-link-val">@jivn.lee</span>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-right reveal">
+        <span class="label" style="display:block;margin-bottom:22px;">Send a message</span>
+        <form class="contact-form" action="mailto:jivn.lee@gmail.com" method="GET" enctype="text/plain">
+          <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-input" type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="subject">Subject</label>
+            <input class="form-input" type="text" id="subject" name="subject" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="body">Message</label>
+            <textarea class="form-textarea" id="body" name="body" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-filled">Send message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <span class="label">© 2026 Jiun Lee</span>
+      <ul class="footer-links">
+        <li><a href="https://instagram.com/jivn.lee" target="_blank">Instagram</a></li>
+      </ul>
+    </footer>
+
+  </main>
+
+  <script src="js/media-config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
