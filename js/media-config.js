@@ -43,16 +43,16 @@ const PROJECTS = [
     year: "2025",
     role: "AI Art Direction",
     description: "A personal project exploring objects that evoke the form of an egg. AI-generated images built around the recurring motif of ovoid shapes — examining texture, surface, and stillness through a series of quiet, considered compositions.",
-    hero:  { type: "image", src: "assets/ai/10.png", alt: "",ratio: "3-4"},
-    thumb: { type: "image", src: "assets/ai/10.png", alt: "",},    
+    hero:  { type: "image", src: "assets/ai/10.PNG", alt: "",ratio: "3-4"},
+    thumb: { type: "image", src: "assets/ai/10.PNG", alt: "",},    
     credits: [
       { key: "AI Art Direction", value: "Jiun Lee" }
        ],
     gallery: [
       { layout: "3col", items: [
-        { type: "image", src: "assets/ai/10.png", alt: "", ratio: "3-4" },
-        { type: "image", src: "assets/ai/8.png", alt: "", ratio: "3-4" },
-        { type: "image", src: "assets/ai/11.png", alt: "", ratio: "3-4" },
+        { type: "image", src: "assets/ai/10.PNG", alt: "", ratio: "3-4" },
+        { type: "image", src: "assets/ai/8.PNG", alt: "", ratio: "3-4" },
+        { type: "image", src: "assets/ai/11.PNG", alt: "", ratio: "3-4" },
       ]},
     ]
   },         
@@ -164,14 +164,14 @@ const PROJECTS = [
 
     hero: {
       type: "video",
-      src: "assets/nurikim/nurikim.mp4",
+      src: "assets/nurikim/nurikim.MP4",
       alt: "",
       ratio: "9-16"
     },
 
     thumb: {
       type: "video",
-      src: "assets/nurikim/nurikim.mp4",
+      src: "assets/nurikim/nurikim.MP4",
       alt: "",
       ratio: "9-16"
     },
@@ -195,13 +195,13 @@ const PROJECTS = [
 
     hero: {
       type: "video",
-      src: "assets/25SS Sound Film/25SS Sound Film.MP4",
+      src: "assets/25SS Sound Film/25SS Sound Film.mp4",
       alt: ""
     },
 
     thumb: {
       type: "video",
-      src: "assets/25SS Sound Film/25SS Sound Film.MP4",
+      src: "assets/25SS Sound Film/25SS Sound Film.mp4",
       alt: ""
     },
 
@@ -389,8 +389,8 @@ const PROJECTS = [
     role: "Editorial Design",
     description: "Editorial design for AMOMENTO 24SS Global Friends.",
     
-    hero:  { type: "image", src: "assets/AMOMENTO Friends Interview/1.jpg", alt: "",},
-    thumb: { type: "image", src: "assets/AMOMENTO Friends Interview/1.jpg", alt: "",},    
+    hero:  { type: "image", src: "assets/Amomento Friends Interview/1.jpg", alt: "",},
+    thumb: { type: "image", src: "assets/Amomento Friends Interview/1.jpg", alt: "",},    
     credits: [
       { key: "Editorial Design", value: "Jiun Lee" },
       { key: "Model", value: "Jenn Kang, Milan Henderikx, Laszlo Badet" },
@@ -670,7 +670,7 @@ const PORTRAIT = {
    ============================================================= */
 const HERO_MEDIA = {
   type: "image",       // ✏️ "image" | "video" | "youtube" | "none"
-  src: "assets/ai/1.jpg",             // ✏️ 이미지/영상 경로 또는 유튜브 링크
+  src: "assets/ai/1.JPG",             // ✏️ 이미지/영상 경로 또는 유튜브 링크
   alt: "",
   ratio: "sq" 
 };
