@@ -228,14 +228,14 @@ const PROJECTS = [
     ],
     gallery: [
       { layout: "3col", items: [
-        { type: "image", src: "assets/25SS/1.jpg", alt: "", ratio: "4-3" },
+        { type: "image", src: "assets/25SS/1.JPG", alt: "", ratio: "4-3" },
         { type: "video", src: "assets/25SS/01.mp4", alt: "", ratio: "4-3" },
         { type: "image", src: "assets/25SS/2.jpg", alt: "", ratio: "4-3" },
         { type: "image", src: "assets/25SS/5.jpg", alt: "", ratio: "3-4" },
         { type: "image", src: "assets/25SS/4.jpg", alt: "", ratio: "3-4" },
-        { type: "image", src: "assets/25SS/8.jpg", alt: "", ratio: "3-4" },
+        { type: "image", src: "assets/25SS/8.JPG", alt: "", ratio: "3-4" },
         { type: "image", src: "assets/25SS/6.jpg", alt: "", ratio: "4-3" },
-        { type: "image", src: "assets/25SS/7.jpg", alt: "", ratio: "4-3" },
+        { type: "image", src: "assets/25SS/7.JPG", alt: "", ratio: "4-3" },
         { type: "video", src: "assets/25SS/02.mp4", alt: "", ratio: "4-3" },
         { type: "image", src: "assets/25SS/9.jpg", alt: "", ratio: "3-4" },
         { type: "image", src: "assets/25SS/11.jpg", alt: "", ratio: "3-4" },
@@ -281,7 +281,7 @@ const PROJECTS = [
         { type: "image", src: "assets/25PS/17.jpg", alt: "", ratio: "4-3" },
 		{ type: "image", src: "assets/25PS/18.jpeg", alt: "", ratio: "4-3" },
 		{ type: "image", src: "assets/25PS/1.jpeg", alt: "", ratio: "4-3" },
-		{ type: "image", src: "assets/25PS/13.jpg", alt: "", ratio: "3-4" },
+		{ type: "image", src: "assets/25PS/13.JPG", alt: "", ratio: "3-4" },
         { type: "image", src: "assets/25PS/19.jpg", alt: "", ratio: "3-4" },
         { type: "image", src: "assets/25PS/AMOMENTO_25PS_2.jpg", alt: "", ratio: "3-4" }
       ]},
@@ -397,15 +397,15 @@ const PROJECTS = [
     ],
     gallery: [
       { layout: "3col", items: [
-        { type: "image", src: "assets/AMOMENTO Friends Interview/1.jpg", alt: "", ratio: "4-5" },
-        { type: "image", src: "assets/AMOMENTO Friends Interview/3.jpg", alt: "", ratio: "4-5" },
-        { type: "image", src: "assets/AMOMENTO Friends Interview/4.jpg", alt: "", ratio: "4-5" },
-        { type: "image", src: "assets/AMOMENTO Friends Interview/5.jpg", alt: "", ratio: "4-5" },
-        { type: "image", src: "assets/AMOMENTO Friends Interview/6.jpg", alt: "", ratio: "4-5" },
-        { type: "image", src: "assets/AMOMENTO Friends Interview/7.jpg", alt: "", ratio: "4-5" },
-        { type: "image", src: "assets/AMOMENTO Friends Interview/10.jpg", alt: "", ratio: "4-5" },
-        { type: "image", src: "assets/AMOMENTO Friends Interview/11.jpg", alt: "", ratio: "4-5" },
-        { type: "image", src: "assets/AMOMENTO Friends Interview/12.jpg", alt: "", ratio: "4-5" }
+        { type: "image", src: "assets/Amomento Friends Interview/1.jpg", alt: "", ratio: "4-5" },
+        { type: "image", src: "assets/Amomento Friends Interview/3.jpg", alt: "", ratio: "4-5" },
+        { type: "image", src: "assets/Amomento Friends Interview/4.jpg", alt: "", ratio: "4-5" },
+        { type: "image", src: "assets/Amomento Friends Interview/5.jpg", alt: "", ratio: "4-5" },
+        { type: "image", src: "assets/Amomento Friends Interview/6.jpg", alt: "", ratio: "4-5" },
+        { type: "image", src: "assets/Amomento Friends Interview/7.jpg", alt: "", ratio: "4-5" },
+        { type: "image", src: "assets/Amomento Friends Interview/10.jpg", alt: "", ratio: "4-5" },
+        { type: "image", src: "assets/Amomento Friends Interview/11.jpg", alt: "", ratio: "4-5" },
+        { type: "image", src: "assets/Amomento Friends Interview/12.jpg", alt: "", ratio: "4-5" }
       ]},
     ]
   },
